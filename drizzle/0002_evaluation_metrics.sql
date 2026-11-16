@@ -1,0 +1,11 @@
+ALTER TABLE "eval_cases" ADD COLUMN IF NOT EXISTS "pr_title" text;
+ALTER TABLE "eval_cases" ADD COLUMN IF NOT EXISTS "hit_at_5" boolean;
+ALTER TABLE "eval_cases" ADD COLUMN IF NOT EXISTS "hit_at_10" boolean;
+ALTER TABLE "eval_cases" ADD COLUMN IF NOT EXISTS "reciprocal_rank" real;
+ALTER TABLE "eval_cases" ADD COLUMN IF NOT EXISTS "grounding_verified_count" integer DEFAULT 0 NOT NULL;
+ALTER TABLE "eval_cases" ADD COLUMN IF NOT EXISTS "grounding_total_count" integer DEFAULT 0 NOT NULL;
+ALTER TABLE "eval_runs" ADD COLUMN IF NOT EXISTS "total_cases" integer DEFAULT 0 NOT NULL;
+ALTER TABLE "eval_runs" ADD COLUMN IF NOT EXISTS "cursor" integer DEFAULT 0 NOT NULL;
+ALTER TABLE "eval_runs" ADD COLUMN IF NOT EXISTS "status" text DEFAULT 'pending' NOT NULL;
+ALTER TABLE "repositories" ADD COLUMN IF NOT EXISTS "embedding_status" text DEFAULT 'idle' NOT NULL;
+ALTER TABLE "repositories" ADD COLUMN IF NOT EXISTS "embedding_started_at" timestamp;
